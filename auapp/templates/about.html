@@ -1,0 +1,264 @@
+
+{% extends 'base.html' %}
+{% load static %}{% block content %}
+<head>
+<style>
+.myDiv {
+  border: 5px outset green;
+  background-color: purple;    
+  text-align: center;
+  color:white;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 8px 15px grey;
+  border-radius: 50%;
+  width: 70%;
+}
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+table{
+scale: 0.55;
+position: center;
+
+width: 80%;
+margin-left:-15%;
+margin-top: -15% ;
+}
+
+h2{
+  margin-top: 5% ;
+}
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-size: medium;
+  
+}
+.row {
+  scale: 0.75;
+}
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 100%;
+  margin-bottom: 0px;
+  padding: 0 8px;
+  height: fit-content;
+  margin-top: auto;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  width: 100%;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 50%;
+    display: block;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+</style>
+</head>
+<body>
+
+<div class="myDiv">
+  <h2>This MINI PROJECT is made by </h2>
+
+  <h3>Roshan Sonavane</h3>
+  <h3>Kishan Mishra</h3>
+  <h3>Gaurav Jha</h3>
+  <h3>Govind Lohar</h3>
+ 
+</div>
+<h2 style="text-align:center" >Our Team</h2>
+<table border="1">
+  <tr>
+    <td>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'roshan1.jpg' %}" alt="Roshan" style="width:100%">
+      <div class="container">
+        <h2>Roshan Sonavane </h2>
+        <p class="title">Front-end and Backend Developer 1</p>
+        <p>He develops this webapp for Front-end and Backend</p>
+        <p>roshan730477@gmail.com.com</p>
+        <div class="popup" onclick="myFunctionr()"><p><button class="button" >Contact</button></p><span class="popuptext" id="myPopupr">+91-9136379117</span></div>
+      </div>
+    </div>
+  </div>
+<td>
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'kishan1.png' %}" alt="Kishan" style="width:100%">
+      <div class="container">
+        <h2>Kishan Mishra</h2>
+        <p class="title">Front-end and Backend Developer 2 </p>
+        <p>He collects the back-end data for predictions.</p>
+        <p>Kishanmishra116@gmail.com</p>
+        <div class="popup" onclick="myFunctionk()"><p><button class="button">Contact</button></p><span class="popuptext" id="myPopupk">+91-7021440669</span>
+</div>
+      </div>
+    </div>
+  </div>
+    </td>
+  
+    <td>
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'gaurav.png' %}" alt="Gaurav" style="width:100%">
+      <div class="container">
+        <h2>Gaurav Jha</h2>
+        <p class="title">Documentation Editor</p>
+        <p>He made the report file and ppt for miniproject.</p>
+        <p>gaurav1922442@gmail.com</p>
+        <div class="popup" onclick="myFunctiongj()"><p><button class="button">Contact</button></p><span class="popuptext" id="myPopupgj">+91-9370344100</span>
+</div>
+      </div>
+    </div>
+  </div>
+  </td>
+    <td> 
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'govind.png' %}" alt="Govind" style="width:100%">
+      <div class="container">
+        <h2>Govind Lohar</h2>
+        <p class="title">Founder</p>
+        <p>He found the idea behind the whole mini project.</p>
+        <p>lohargovind11@gmail.com</p>
+        <div class="popup" onclick="myFunctiongl()"><p><button class="button">Contact</button></p><span class="popuptext" id="myPopupgl">+91-9372127934</span>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+</table>
+</body>
+<script>
+// When the user clicks on div, open the popup
+function myFunctionr() {
+  var popup = document.getElementById("myPopupr");
+  popup.classList.toggle("show");
+}
+function myFunctionk() {
+  var popup = document.getElementById("myPopupk");
+  popup.classList.toggle("show");
+}
+function myFunctiongj() {
+  var popup = document.getElementById("myPopupgj");
+  popup.classList.toggle("show");
+}
+function myFunctiongl() {
+  var popup = document.getElementById("myPopupgl");
+  popup.classList.toggle("show");
+}
+</script>
+
+
+{% endblock %}

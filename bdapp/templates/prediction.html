@@ -1,0 +1,58 @@
+
+{% extends 'base.html' %}
+{% load static %}{% block content %}
+<head><style>
+
+
+form { font-family:Simsun; }
+div {
+
+    width: -60%;
+    float: left;
+    } 
+table {
+  font-weight: 900;
+  width: 90%;
+
+}
+
+th
+{
+text-align: left;
+
+}
+td
+{
+
+text-align: left;
+}
+
+h1 {
+  text-shadow: 2px 2px 5px green;
+font-size:45px;
+font-family:Algerian;
+color:black;
+}
+input[type=number],input[type=text] {
+  border: 2px solid grey;
+  border-radius: 4px;
+font-family:calibri;
+width:25%;
+}
+</style>
+</head>
+</br>
+<div="pred">
+
+<h1  >{{ msg }}</h1>
+
+<form method="POST">
+{% csrf_token %}
+<table >{{ fm.as_table }}</table>
+</br>
+<input type="submit" value="Predict Price" class="btn1" />
+</form>
+
+
+ {% endblock %}
+

@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% load static %}{% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head><style>
+h1 {
+  text-shadow: 2px 2px 5px purple;
+font-size:45px;
+font-family:Algerian;
+color:black;
+}
+
+
+</style></head>
+
+<h1>Welcome {{ user.username }}</h1>
+
+
+
+{% endblock %}
